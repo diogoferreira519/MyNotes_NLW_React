@@ -4,11 +4,10 @@ import { toast } from "sonner";
 import { ChangeEvent, FormEvent, useState } from "react";
 interface newNoteCardProps {
   onNoteCreated: (content: string) => void;
-  onNoteEdit?: (content: string) => void;
 
 }
 let speechRecognition: SpeechRecognition | null = null;
-export function NewNoteCard({ onNoteCreated, onNoteEdit }: newNoteCardProps) {
+export function NewNoteCard({ onNoteCreated }: newNoteCardProps) {
   const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true);
   const [content, setContent] = useState<string>("");
   const [isRecording, setRecording] = useState(false);
